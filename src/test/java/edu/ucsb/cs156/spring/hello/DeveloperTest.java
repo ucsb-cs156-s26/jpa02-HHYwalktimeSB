@@ -29,5 +29,10 @@ public class DeveloperTest {
 
     // TODO: Add additional tests as needed to get to 100% jacoco line coverage, and
     // 100% mutation coverage (all mutants timed out or killed)
-
+    @Test
+    public void getGethubId_returns_correct_Id() {
+        // TODO: Replace Chris G. with your name as shown on
+        // <https://bit.ly/cs156-s26-teams>
+        assertEquals("HHYwalktimeSB", Developer.getGithubId());
+    }
 }
