@@ -11,13 +11,15 @@ public class TeamTest {
 
     @BeforeEach
     public void setup() {
-        //team = new Team("test-team");    
-        team = Developer.getTeam();
+        team = new Team("test-team");    
+        //team = Developer.getTeam();
+        team.addMember("aa");
+        team.addMember("bb");
     }
 
     @Test
     public void getName_returns_correct_name() {
-       assert(team.getName().equals("s26-07"));
+       assert(team.getName().equals("test-team"));
     }
 
    
@@ -25,12 +27,24 @@ public class TeamTest {
     // 100% mutation coverage (all mutants timed out or killed)
     @Test
     public void testmember() {
-       assert(team.getMembers().contains("Hanson"));
-       assert(team.getMembers().contains("Emerson"));
-       assert(team.getMembers().contains("Raymond"));
-       assert(team.getMembers().contains("Waytt"));
-       assert(team.getMembers().contains("David"));
-       assert(team.getMembers().contains("Alexander"));
-       assert(team.getMembers().contains("Andrew"));
+       assert(team.getMembers().contains("aa"));
+       assert(team.getMembers().contains("bb"));
+       assert(!team.getMembers().contains("cc"));
+    }
+
+    @Test
+    public void testts() {
+       assert(team.toString().equals("Team(name=test-team, members=[aa, bb])"));
+    }
+
+    @Test
+    public void testeq() {
+       Team t1 = new Team();
+       t1.setName("sjs");
+       t1.addMember("shj");
+       Team t2 = new Team();
+       t2.setName("sjs");
+       t2.addMember("shj");
+       assertEquals(t1.hashCode(), t2.hashCode());
     }
 }
