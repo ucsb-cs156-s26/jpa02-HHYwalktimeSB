@@ -45,6 +45,15 @@ public class TeamTest {
        Team t2 = new Team();
        t2.setName("sjs");
        t2.addMember("shj");
+       assert(t1.equals(t2));
+       assert(t1.equals(t1));
+       assert(!t1.equals("ah"));
        assertEquals(t1.hashCode(), t2.hashCode());
+       t2.addMember("ahah");
+       assert(!t1.equals(t2));
+       Team t3 = new Team();
+       t3.setName("aaaa");
+       t3.addMember("shj");
+       assert(!t1.equals(t3));
     }
 }
