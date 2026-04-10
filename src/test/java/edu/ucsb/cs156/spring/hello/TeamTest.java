@@ -27,14 +27,23 @@ public class TeamTest {
     // 100% mutation coverage (all mutants timed out or killed)
     @Test
     public void testmember() {
-       assert(team.getMembers().contains("aa"));
-       assert(team.getMembers().contains("bb"));
        assert(!team.getMembers().contains("cc"));
+       Team t = Developer.getTeam();
+       assert(t.getMembers().contains("EMERSON JIANYI"));
+       assert(t.getMembers().contains("RAYMOND"));
+       assert(t.getMembers().contains("WYATT"));
+       assert(t.getMembers().contains("DAVID HOING"));
+       assert(t.getMembers().contains("ALEXANDER"));
+       assert(t.getMembers().contains("ANDREW"));
+       assert(t.getMembers().contains("HANSON"));
     }
 
     @Test
     public void testts() {
        assert(team.toString().equals("Team(name=test-team, members=[aa, bb])"));
+       int res = team.hashCode();
+       int expected = -1226199047;
+       assertEquals(expected, res);
     }
 
     @Test
@@ -55,5 +64,7 @@ public class TeamTest {
        t3.setName("aaaa");
        t3.addMember("shj");
        assert(!t1.equals(t3));
+       assert(t1.hashCode()!=t3.hashCode());
+
     }
 }
