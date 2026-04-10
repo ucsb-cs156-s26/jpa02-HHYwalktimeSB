@@ -41,13 +41,13 @@ public class Developer {
     public static Team getTeam() {
         // TODO: Change this to your team name
         Team team = new Team("s26-07");
-        team.addMember("Emerson");
-        team.addMember("Raymond");
-        team.addMember("Waytt");
-        team.addMember("David");
-        team.addMember("Alexander");
-        team.addMember("Andrew");
-        team.addMember("Hanson");
+        team.addMember("EMERSON");
+        team.addMember("RAYMOND");
+        team.addMember("WAYTT");
+        team.addMember("DAVID");
+        team.addMember("ALEXANDER");
+        team.addMember("ANDREW");
+        team.addMember("HANSON");
         return team;
     }
 }
